@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Export-Package: be.anova.course.servicemix.nmr.sender;uses:="org.apach
+ e.camel.builder,org.apache.camel.model,org.apache.camel"
+Built-By: hans
+Build-Jdk: 1.6.0_18
+Bundle-Version: 1.0
+Tool: Bnd-0.0.238
+Bundle-Name: sender
+Bnd-LastModified: 1272468641271
+Created-By: Apache Maven Bundle Plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: be.anova.course.servicemix.nmr.sender
+Import-Package: be.anova.course.servicemix.nmr.sender,org.apache.camel
+ ;version="2.0",org.apache.camel.builder;version="2.0",org.apache.came
+ l.model;version="2.0",org.apache.servicemix.camel.nmr,org.apache.serv
+ icemix.nmr.api
+

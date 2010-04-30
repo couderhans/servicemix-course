@@ -1,0 +1,10 @@
+<classpath>
+  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
+  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-core/2.0.0/camel-core-2.0.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-core/2.0.0/camel-core-2.0.0-tests.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/servicemix/nmr/org.apache.servicemix.nmr.api/1.2.0/org.apache.servicemix.nmr.api-1.2.0.jar"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+</classpath>

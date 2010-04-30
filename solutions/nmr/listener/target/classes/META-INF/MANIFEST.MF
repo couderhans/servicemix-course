@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Export-Package: be.anova.course.servicemix.nmr.listener;uses:="org.apa
+ che.commons.logging,org.apache.servicemix.nmr.api.event,org.apache.se
+ rvicemix.nmr.api"
+Built-By: hans
+Build-Jdk: 1.6.0_18
+Bundle-Version: 1.0
+Tool: Bnd-0.0.238
+Bundle-Name: listener
+Bnd-LastModified: 1272468644584
+Created-By: Apache Maven Bundle Plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: be.anova.course.servicemix.nmr.listener
+Import-Package: be.anova.course.servicemix.nmr.listener,org.apache.com
+ mons.logging,org.apache.servicemix.camel.nmr,org.apache.servicemix.nm
+ r.api,org.apache.servicemix.nmr.api.event
+

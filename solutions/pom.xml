@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>be.anova.course</groupId>
+  <artifactId>servicemix</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0</version>
+  <name>ServiceMix 4.2 Course</name>
+
+
+  <properties>
+
+    <activemq.version>5.3.1</activemq.version>
+    <spring.version>2.5.6.SEC01</spring.version>
+    <xbean.version>3.6</xbean.version>
+    <felix.version>1.4.0</felix.version>
+    <servicemix-version>4.2</servicemix-version>
+    <camel-version>2.0.0</camel-version>
+
+    <course.servicemix.osgi.export></course.servicemix.osgi.export>
+    <course.servicemix.osgi.import>org.apache.servicemix.camel.nmr,org.apache.servicemix.nmr.api,*</course.servicemix.osgi.import>
+    <course.servicemix.osgi.private/>
+   
+
+  </properties>
+
+  <modules>
+    <module>nmr</module>
+    <module>jbi</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>${felix.version}</version>
+        <extensions>true</extensions>
+        <inherited>true</inherited>
+        <configuration>
+          <instructions>
+            <Bundle-Name>${artifactId}</Bundle-Name>
+            <Export-Package>${course.servicemix.osgi.export}</Export-Package>
+            <Import-Package>${course.servicemix.osgi.import}</Import-Package>
+            <Private-Package>${course.servicemix.osgi.private}</Private-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-archetype-plugin</artifactId>      
+        <configuration>
+          <archetypeCatalog>http://servicemix.apache.org/tooling/${servicemix-version}</archetypeCatalog>         
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>apache</id>
+      <name>Apache Repository</name>
+      <url>http://people.apache.org/repo/m2-ibiblio-rsync-repository</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>apache.snapshots</id>
+      <name>Apache Snapshots Repository</name>
+      <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>apache</id>
+      <name>Apache Repository</name>
+      <url>http://people.apache.org/repo/m2-ibiblio-rsync-repository</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+	</pluginRepository>
+	<pluginRepository>
+	  <id>apache.snapshots</id>
+	  <name>Apache Snapshots Repository</name>
+	  <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+	  <snapshots>
+	    <enabled>true</enabled>
+	  </snapshots>
+	  <releases>
+	    <enabled>false</enabled>
+	  </releases>
+	</pluginRepository>
+  </pluginRepositories>
+
+</project>
