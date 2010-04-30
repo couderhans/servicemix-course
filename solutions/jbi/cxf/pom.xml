@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-
  (c) 2010, anova r&d bvba.  All rights reserved.
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,26 +15,26 @@
  limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <artifactId>servicemix</artifactId>
-    <groupId>be.anova.course</groupId>
-    <version>1.0</version>
+    <artifactId>jbi</artifactId>
+    <groupId>be.anova.course.servicemix</groupId>
+    <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <groupId>be.anova.course.servicemix</groupId>
-  <artifactId>nmr</artifactId>
+  <groupId>be.anova.course.servicemix.jbi</groupId>
+  <artifactId>cxf</artifactId>
+  <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <version>1.0</version>
-  <name>ServiceMix 4.2 Course :: Nmr</name>
+  <name>ServiceMix 4.2 Course :: CXF</name>
 
   <modules>
-    <module>sender</module>
-    <module>receiver</module>
-    <module>listener</module>
+      <module>jbi-cxf-bc-su</module>
+      <module>jbi-cxf-se-su</module>
+      <module>jbi-sa</module>
   </modules>
-
+ 
 </project>

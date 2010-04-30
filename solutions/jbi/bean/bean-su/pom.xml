@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ (c) 2010, anova r&d bvba.  All rights reserved.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+   <modelVersion>4.0.0</modelVersion>
+    
+  <groupId>be.anova.course.servicemix.jbi</groupId>
+  <artifactId>bean</artifactId>
+  <packaging>bundle</packaging>
+  <version>1.0</version>
+  <name>ServiceMix Course :: Jbi :: Bean</name>
+
+  <properties>
+      <component-version>2010.01</component-version>
+      <felix-version>1.4.0</felix-version>
+      <course.servicemix.osgi.export>be.anova.course.servicemix.jbi.bean</course.servicemix.osgi.export>
+      <course.servicemix.osgi.import>*</course.servicemix.osgi.import>
+      <course.servicemix.osgi.private/>
+  </properties>
+    
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>${felix-version}</version>
+        <extensions>true</extensions>
+        <inherited>true</inherited>
+        <configuration>
+          <instructions>
+            <Bundle-Name>${artifactId}</Bundle-Name>
+            <Export-Package>${course.servicemix.osgi.export}</Export-Package>
+            <Import-Package>${course.servicemix.osgi.import}</Import-Package>
+            <Private-Package>${course.servicemix.osgi.private}</Private-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-archetype-plugin</artifactId>      
+        <configuration>
+          <archetypeCatalog>http://servicemix.apache.org/tooling/${servicemix-version}</archetypeCatalog>         
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+    <repositories>
+      <repository>
+        <releases />
+
+        <snapshots>
+          <enabled>false</enabled>
+        </snapshots>
+        <id>apache</id>
+        <name>Apache Repository</name>
+        <url>http://people.apache.org/repo/m2-ibiblio-rsync-repository</url>
+      </repository>
+
+      <repository>
+        <releases>
+          <enabled>false</enabled>
+        </releases>
+        <snapshots />
+        <id>apache.snapshots</id>
+        <name>Apache Snapshots Repository</name>
+
+        <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+      </repository>
+    </repositories>
+    <pluginRepositories>
+      <pluginRepository>
+        <releases />
+        <snapshots>
+          <enabled>false</enabled>
+
+        </snapshots>
+        <id>apache</id>
+        <name>Apache Repository</name>
+        <url>http://people.apache.org/repo/m2-ibiblio-rsync-repository</url>
+      </pluginRepository>
+      <pluginRepository>
+        <releases>
+
+          <enabled>false</enabled>
+        </releases>
+        <snapshots />
+        <id>apache.snapshots</id>
+        <name>Apache Snapshots Repository</name>
+        <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+      </pluginRepository>
+
+    </pluginRepositories>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.servicemix</groupId>
+        <artifactId>servicemix-bean</artifactId>
+        <version>${component-version}</version>
+      </dependency>
+    </dependencies>
+
+
+</project>

@@ -15,16 +15,19 @@
  limitations under the License.
 
 -->
-<beans xmlns:cxfse="http://servicemix.apache.org/cxfse/1.0"
-       xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://servicemix.apache.org/cxfse/1.0 http://servicemix.apache.org/schema/servicemix-cxfse-3.2.3.xsd
-       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-    <cxfse:endpoint>
-        <cxfse:pojo>
-          <bean class="be.anova.source.servicemix.jbi.HelloWorld2Impl" />
-        </cxfse:pojo>
-    </cxfse:endpoint>
+    <groupId>be.anova.course.servicemix.jbi</groupId>
+    <artifactId>bean</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    
+    <modules>
+        <module>bean-su</module>
+    </modules>
 
-</beans>
+
+</project>

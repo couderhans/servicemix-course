@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package be.anova.course.servicemix.nmr.sender;
+package be.anova.source.servicemix.jbi;
 
-import org.apache.camel.builder.RouteBuilder;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
 
-public class Sender extends RouteBuilder {
+@WebService(name = "ExampleService", targetNamespace = "urn:be:anova:course:servicemix:jbi:cxf")
+public class HelloWorld2Impl implements HelloWorld {
 
-	@Override
-	public void configure() throws Exception {
-        
-		from("timer://foo?fixedRate=true&period=6000")
-		  .setBody(constant("Excercise 1"))
-		  .to("nmr:endpoint:incoming");
-		
+	@WebMethod
+	public String doSomething(String text) {
+		// TODO Auto-generated method stub
+        return "Hello " + text;
 	}
-	
-	
+
 }

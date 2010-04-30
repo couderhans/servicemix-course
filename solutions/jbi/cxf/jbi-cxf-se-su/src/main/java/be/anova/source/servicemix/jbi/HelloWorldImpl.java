@@ -1,12 +1,11 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
+ * (c) 2010, anova r&d bvba.  All rights reserved.
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,7 +18,7 @@ package be.anova.source.servicemix.jbi;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-@WebService(name = "ExampleService", targetNamespace = "http://www.anova.be/course/servicemix/exampleService")
+@WebService(name = "ExampleService", targetNamespace = "urn:be:anova:course:servicemix:jbi:cxf")
 public class HelloWorldImpl implements HelloWorld {
 
 	@WebMethod
