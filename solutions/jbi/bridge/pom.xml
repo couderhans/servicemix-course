@@ -17,23 +17,18 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
+
   <parent>
-    <groupId>be.anova.course</groupId>
-    <artifactId>servicemix</artifactId>
-    <version>1.0</version>
+    <groupId>be.anova.course.servicemix</groupId>
+    <artifactId>jbi</artifactId>
+    <version>1.0-SNAPSHOT</version>
   </parent>
   
-  <groupId>be.anova.course.servicemix</groupId>
-  <artifactId>jbi</artifactId>
-  <packaging>pom</packaging>
-  <version>1.0</version>
-  <name>ServiceMix 4.2 Course :: Jbi</name>
 
-  <modules>
-    <module>bridge</module>
-    <module>file-to-bean</module>
-    <module>camel</module>
-  </modules>
+  <groupId>be.anova.course.servicemix.jbi</groupId>
+  <artifactId>bridge</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>ServiceMix 4.2 Course :: Jbi :: Bridge</name>
 
 </project>

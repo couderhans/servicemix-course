@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>camel</artifactId>
+    <groupId>be.anova.course.servicemix.jbi</groupId>
+    <version>1.0</version>
+  </parent>
+  <groupId>be.anova.course.servicemix.jbi.camel</groupId>
+  <artifactId>camel-sa</artifactId>
+  <version>1.0</version>
+  <packaging>jbi-service-assembly</packaging>
+  <name>ServiceMix 4.2 Course :: Jbi :: Camel :: Camel SA</name>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.servicemix.tooling</groupId>
+        <artifactId>jbi-maven-plugin</artifactId>
+        <version>4.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <type>service-assembly</type>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>be.anova.course.servicemix.jbi.camel</groupId>
+      <artifactId>camel-su</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>be.anova.course.servicemix.jbi.camel</groupId>
+      <artifactId>file-su</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+</project>

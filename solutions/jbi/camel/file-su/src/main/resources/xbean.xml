@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:file="http://servicemix.apache.org/file/1.0" 
+       xmlns:sm="http://servicemix.apache.org/config/1.0"
+       xmlns:anova="urn:be.anova.course.servicemix.jbi">
+
+	<file:sender service="anova:file" 
+                     endpoint="out" 
+                     directory="file:data/anova/test/out"/>
+
+ 	<file:poller service="anova:file" 
+                     endpoint="in" 
+                     file="file:data/anova/test/in"
+		     targetService="anova:camel" 
+                     targetEndpoint="route"/>
+
+
+ 
+</beans>
