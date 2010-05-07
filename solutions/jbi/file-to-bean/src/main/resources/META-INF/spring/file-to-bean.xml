@@ -28,19 +28,17 @@
          http://servicemix.apache.org/bean/1.0
          http://servicemix.apache.org/bean/1.0/servicemix-bean.xsd">
 
-	 <file:poller service="anova:file" 
-                      endpoint="in" 
-                      targetService="anova:bean"
-                      targetEndpoint="endpoint" 
-                      file="file:data/in" />
+  <file:poller service="anova:file" endpoint="in"
+               targetService="anova:bean"
+               targetEndpoint="endpoint"
+               file="file:input/bean" />
 
 
-         <bean:endpoint service="anova:bean"
-                        endpoint="endpoint"
-                        bean="#listenerBean" />
+  <bean:endpoint service="anova:bean" endpoint="endpoint"
+                 bean="#listenerBean" />
 
-    <bean id="listenerBean" class="be.anova.course.servicemix.jbi.bean.ListenerBean"/>
+  <bean id="listenerBean" class="be.anova.course.servicemix.jbi.bean.ListenerBean"/>
 
-    <bean class="org.apache.servicemix.common.osgi.EndpointExporter" />
+  <bean class="org.apache.servicemix.common.osgi.EndpointExporter" />
 
 </beans>

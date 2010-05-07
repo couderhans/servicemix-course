@@ -22,12 +22,13 @@
     limitations under the License.
   -->
 
-  <import resource="classpath:org/apache/servicemix/camel/nmr/camel-nmr.xml" />  
+  <!-- TODO: import the NMR component definition -->
 
   <camelContext xmlns="http://camel.apache.org/schema/spring">
     <packageScan>
       <package>be.anova.course.servicemix.nmr.receiver</package>
     </packageScan>
   </camelContext>
+ 
 
 </beans>

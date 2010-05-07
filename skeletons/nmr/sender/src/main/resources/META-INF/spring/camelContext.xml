@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
        xsi:schemaLocation="
-       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/osgi  http://www.springframework.org/schema/osgi/spring-osgi.xsd
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
   <!--
@@ -22,11 +23,11 @@
     limitations under the License.
   -->
 
-  <import resource="classpath:org/apache/servicemix/camel/nmr/camel-nmr.xml" />  
+  <!-- TODO: import the NMR component definition -->
 
   <camelContext xmlns="http://camel.apache.org/schema/spring">
     <packageScan>
-      <package>be.anova.course.servicemix.nmr.receiver</package>
+      <package>be.anova.course.servicemix.nmr.sender</package>
     </packageScan>
   </camelContext>
 

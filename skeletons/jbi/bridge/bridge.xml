@@ -32,18 +32,13 @@
     limitations under the License.
   -->
 
-	<file:poller service="anova:bridge" endpoint="file"
-               targetService="anova:jms"
-               targetEndpoint="endpoint"
-               file="file:input/jms" />
+  <!-- TODO: add a file:poller that reads from file:input/jms and sends to the jms endpoint below -->
 
-  <jms:provider service="anova:jms" endpoint="endpoint"
-                connectionFactory="#connectionFactory"
-                destinationName="input.jms" />
+  <!-- TODO: add a jms:provider endpoint to send messages to the input.jms queue -->
 
   <amq:connectionFactory id="connectionFactory" brokerURL="tcp://localhost:61616"/>
 
-  <bean class="org.apache.servicemix.common.osgi.EndpointExporter" />
+  <!-- TODO: add the OSGi endpoint exporter bean -->
 
 </beans>
 
