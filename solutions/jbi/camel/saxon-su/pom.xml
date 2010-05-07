@@ -27,9 +27,9 @@
   </parent>
 
   <groupId>be.anova.course.servicemix.jbi.camel</groupId>
-  <artifactId>file-su</artifactId>
+  <artifactId>saxon-su</artifactId>
   <packaging>jbi-service-unit</packaging>
-  <name>ServiceMix :: JBI :: Camel :: File SU</name>
+  <name>ServiceMix :: JBI :: Camel :: Saxon SU</name>
   
   <build>
     <resources>
@@ -45,7 +45,7 @@
   <dependencies>
     <dependency>
       <groupId>org.apache.servicemix</groupId>
-      <artifactId>servicemix-file</artifactId>
+      <artifactId>servicemix-saxon</artifactId>
       <version>${servicemix-components.version}</version>
     </dependency>
   </dependencies>

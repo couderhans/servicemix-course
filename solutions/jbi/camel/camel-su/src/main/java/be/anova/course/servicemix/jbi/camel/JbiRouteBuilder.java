@@ -13,20 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package be.anova.course.servicemix.nmr.receiver;
+package be.anova.course.servicemix.jbi.camel;
 
 import org.apache.camel.builder.RouteBuilder;
 
-public class Receiver extends RouteBuilder {
+/**
+ * Routebuilder for routing between JBI endpoints
+ */
+public class JbiRouteBuilder extends RouteBuilder {
 
-	@Override
-	public void configure() throws Exception {
-		
-		from("nmr:endpoint:incoming").to("log:exercise1");
+    public void configure() {
+    
+    	from("jbi:endpoint:urn:be:anova:course:servicemix:jbi:camel:router:endpoint")
+            .to("jbi:endpoint:urn:be:anova:course:servicemix:jbi:camel:xslt:endpoint?mep=in-out")
+    	    .to("jbi:endpoint:urn:be:anova:course:servicemix:jbi:camel:file:out");
 
-		
-	}
-	
-	
-	
+    }
+
 }

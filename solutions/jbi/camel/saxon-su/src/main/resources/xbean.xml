@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns:file="http://servicemix.apache.org/file/1.0" 
+<beans xmlns:saxon="http://servicemix.apache.org/saxon/1.0"
        xmlns:anova="urn:be:anova:course:servicemix:jbi:camel">
 
   <!--
@@ -18,15 +18,7 @@
     limitations under the License.
   -->  
 
-	<file:sender service="anova:file"
-               endpoint="out"
-               directory="file:output/camel"
-               overwrite="true"/>
-
- 	<file:poller service="anova:file"
-               endpoint="in"
-               file="file:input/camel"
-		           targetService="anova:router"
-               targetEndpoint="endpoint"/>
+  <saxon:xslt service="anova:xslt" endpoint="endpoint"
+              resource="classpath:transform.xsl" />
  
 </beans>

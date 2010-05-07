@@ -20,29 +20,31 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.servicemix.nmr.api.Exchange;
 import org.apache.servicemix.nmr.api.event.ExchangeListener;
 
-
+/**
+ * Our own ExchangeListener implemenation
+ */
 public class ExchangeListenerImpl implements ExchangeListener {
 	
     private static final transient Log LOG = LogFactory.getLog(ExchangeListenerImpl.class);
 
 	public void exchangeDelivered(Exchange exchange) {
-
-		LOG.debug("Exchange Delivered: " + exchange);
-		
+		log("delivered", exchange);
 	}
 
 	public void exchangeFailed(Exchange exchange) {
-		
-		LOG.debug("Exchange Failed: " + exchange);
-		
+		log("failed", exchange);
 	}
 
 	public void exchangeSent(Exchange exchange) {
-
-		LOG.debug("Exchange Send: " + exchange);
-		
+		log("sent", exchange);
 	}
-	
-	
-	
+
+    private void log(String event, Exchange exchange) {
+        LOG.info(String.format("Exchange %s %s:%n- Body: %s%n- Status: %s",
+                               exchange.getId(),
+                               event,
+                               exchange.getIn().getBody(),
+                               exchange.getStatus()));
+    }
+
 }

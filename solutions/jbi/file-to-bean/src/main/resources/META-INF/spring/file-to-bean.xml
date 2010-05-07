@@ -16,27 +16,17 @@
 
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:util="http://www.springframework.org/schema/util"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:file="http://servicemix.apache.org/file/1.0"
        xmlns:bean="http://servicemix.apache.org/bean/1.0"
-       xmlns:osgi="http://www.springframework.org/schema/osgi"
        xmlns:anova="urn:be:anova:course:servicemix:jbi"
        xsi:schemaLocation="
          http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans.xsd
-         http://www.springframework.org/schema/util
-         http://www.springframework.org/schema/util/spring-util.xsd
-         http://www.springframework.org/schema/osgi
-         http://www.springframework.org/schema/osgi/spring-osgi.xsd
-         http://www.springframework.org/schema/osgi-compendium
-         http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
          http://servicemix.apache.org/file/1.0
          http://servicemix.apache.org/file/1.0/servicemix-file.xsd
          http://servicemix.apache.org/bean/1.0
-         http://servicemix.apache.org/bean/1.0/servicemix-bean.xsd
-         http://www.springframework.org/schema/osgi
-         http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+         http://servicemix.apache.org/bean/1.0/servicemix-bean.xsd">
 
 	 <file:poller service="anova:file" 
                       endpoint="in" 

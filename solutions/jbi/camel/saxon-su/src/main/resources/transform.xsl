@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns:file="http://servicemix.apache.org/file/1.0" 
-       xmlns:anova="urn:be:anova:course:servicemix:jbi:camel">
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <!--
     (c) 2010, anova r&d bvba.  All rights reserved.
@@ -18,15 +17,16 @@
     limitations under the License.
   -->  
 
-	<file:sender service="anova:file"
-               endpoint="out"
-               directory="file:output/camel"
-               overwrite="true"/>
+  <xsl:template match="/">
+    <transformed>
+      <xsl:apply-templates />
+    </transformed>
+  </xsl:template>
 
- 	<file:poller service="anova:file"
-               endpoint="in"
-               file="file:input/camel"
-		           targetService="anova:router"
-               targetEndpoint="endpoint"/>
- 
-</beans>
+  <xsl:template match="@*|node()">
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()"/>
+    </xsl:copy>
+  </xsl:template>
+
+</xsl:stylesheet>

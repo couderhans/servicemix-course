@@ -24,6 +24,9 @@ import javax.jbi.messaging.MessageExchange;
 import javax.jbi.messaging.MessagingException;
 import javax.jbi.messaging.NormalizedMessage;
 
+/**
+ * Simple bean to use in a JBI endpoint
+ */
 public class ListenerBean implements MessageExchangeListener {
 
     @Resource
@@ -32,17 +35,22 @@ public class ListenerBean implements MessageExchangeListener {
     public void onMessageExchange(MessageExchange exchange) throws MessagingException {
         if (exchange.getStatus() == ExchangeStatus.ACTIVE) {
             NormalizedMessage message = exchange.getMessage("in");
-            System.out.println(message.getProperty("Path"));
-            System.out.println(message.getProperty("Sender"));
-            System.out.println(message.getProperty("Receiver"));
-            System.out.println(message.getProperty("name"));
-            
+
+            display("%nReceived exchange %s%n", exchange.getExchangeId());
+            display("- service: %s%n", exchange.getService());
+
+            display("- body: %s%n", message.getContent());
+            display("- headers: %n");
+            for (Object key : message.getPropertyNames()) {
+                display("  +- %s: %s%n", key, message.getProperty(key.toString()));
+            }
+
             exchange.setStatus(ExchangeStatus.DONE);
-            channel.send(exchange);
-   
+            channel.send(exchange);   
         }
     }
 
-    
-
+    private void display(String format, Object... parms) {
+        System.out.printf(format, parms);
+    }
 }
